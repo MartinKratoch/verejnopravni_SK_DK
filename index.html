@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dánsko a Slovensko: změny ve správě a financování veřejnoprávních médií</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-page:#FAF8F3; --bg-elev:#FFFFFF; --bg-tint:#F2EEE5;
+  --ink:#1F1B18; --ink-2:#4A443E; --ink-3:#7A726A; --rule:#DDD6CA;
+  --burgundy:#82143C;
+  --fee:#2F6B4F; --mix:#7FA88F; --bud:#A9503B; --bud2:#D58B73;
+  --gov-a:#5B5650; --gov-b:#8E8780; --gov-c:#C2BBB2;
+  --serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --sans:"Instrument Sans", Calibri, "Segoe UI", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg-page:#1B1917; --bg-elev:#24211E; --bg-tint:#2B2723;
+    --ink:#F1ECE4; --ink-2:#CFC7BC; --ink-3:#9C948A; --rule:#3A3530;
+    --burgundy:#D9758F;
+    --fee:#5FA483; --mix:#8DB89F; --bud:#C9705A; --bud2:#E2A48F;
+    --gov-a:#B8B0A6; --gov-b:#8C847B; --gov-c:#5E5851;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg-page:#1B1917; --bg-elev:#24211E; --bg-tint:#2B2723;
+  --ink:#F1ECE4; --ink-2:#CFC7BC; --ink-3:#9C948A; --rule:#3A3530;
+  --burgundy:#D9758F;
+  --fee:#5FA483; --mix:#8DB89F; --bud:#C9705A; --bud2:#E2A48F;
+  --gov-a:#B8B0A6; --gov-b:#8C847B; --gov-c:#5E5851;
+  color-scheme: dark;
+}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg-page);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--burgundy);text-underline-offset:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--burgundy);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-0.005em;color:var(--ink)}
+h1{font-size:clamp(1.9rem,4.2vw,2.9rem);line-height:1.1;margin:0 0 16px;max-width:22ch}
+h2{font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.2;margin:0 0 10px}
+h3{font-size:1.25rem;margin:0 0 8px}
+p{margin:0 0 14px}
+.lead{font-family:var(--serif);font-size:1.18rem;color:var(--ink-2);max-width:66ch}
+.meta,.note{color:var(--ink-3);font-size:.9rem;max-width:76ch}
+header.top{padding:52px 0 32px;border-bottom:1px solid var(--rule)}
+section{padding:48px 0;border-bottom:1px solid var(--rule)}
+section.tint{background:var(--bg-tint)}
+
+/* časová osa */
+.tl-scroll{overflow-x:auto;margin-top:20px;padding-bottom:6px}
+.tl{min-width:820px;position:relative}
+.axis{display:grid;grid-template-columns:150px 1fr;font-size:.82rem;color:var(--ink-3)}
+.years{position:relative;height:22px}
+.years span{position:absolute;transform:translateX(-50%);font-variant-numeric:tabular-nums}
+.country{margin-top:18px}
+.country h3{margin:6px 0 8px}
+.lane{display:grid;grid-template-columns:150px 1fr;align-items:center;min-height:44px}
+.lane .ln{font-size:.85rem;color:var(--ink-2);padding-right:10px}
+.track{position:relative;height:34px;border-left:1px solid var(--rule);background-image:linear-gradient(to right,var(--rule) 1px,transparent 1px);background-size:calc(100%/11) 100%}
+.ph{position:absolute;top:3px;bottom:3px;border-radius:4px;color:#fff;font-size:.74rem;line-height:1.15;padding:3px 7px;overflow:hidden;display:flex;align-items:center}
+.ph.light{color:#1F1B18}
+.ph.dash{background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.35) 0 5px,transparent 5px 10px)}
+.ms-track{position:relative;height:30px;border-left:1px solid var(--rule)}
+.ms{position:absolute;top:4px;transform:translateX(-50%);width:22px;height:22px;border-radius:50%;border:2px solid var(--ink);background:var(--bg-page);font:600 .68rem/18px var(--sans);text-align:center;color:var(--ink);cursor:pointer;padding:0}
+.ms.key{background:var(--burgundy);border-color:var(--burgundy);color:#fff}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.85rem;color:var(--ink-2);margin-top:16px}
+.legend i{display:inline-block;width:14px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:6px}
+
+/* milníky */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;margin-top:22px}
+.two > div{min-width:0}
+ol.mil{list-style:none;padding:0;margin:0}
+ol.mil li{display:grid;grid-template-columns:30px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--rule)}
+ol.mil li:target,ol.mil li.hl{background:var(--bg-elev)}
+ol.mil .n{width:24px;height:24px;border-radius:50%;border:2px solid var(--ink);font:600 .7rem/20px var(--sans);text-align:center}
+ol.mil .n.key{background:var(--burgundy);border-color:var(--burgundy);color:#fff}
+ol.mil b{display:block;font-variant-numeric:tabular-nums}
+ol.mil span{color:var(--ink-2);font-size:.95rem}
+
+/* srovnání stavů */
+.cmp-wrap{overflow-x:auto;margin-top:18px}
+table.cmp{width:100%;min-width:760px;border-collapse:collapse;font-size:.93rem;background:var(--bg-elev)}
+table.cmp th,table.cmp td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--rule)}
+table.cmp thead th{font-size:.85rem;color:var(--ink-3);font-weight:600;background:var(--bg-page)}
+table.cmp tbody th{font-family:var(--serif);font-weight:600;font-size:1rem;width:16%}
+table.cmp td{width:28%}
+table.cmp td.chg{color:var(--ink-2)}
+
+/* čísla */
+.bars{margin-top:14px}
+.br{display:grid;grid-template-columns:48px minmax(0,1fr) 62px;gap:10px;align-items:center;padding:4px 0;font-variant-numeric:tabular-nums;font-size:.9rem}
+.br .t{position:relative;height:16px}
+.br .f{position:absolute;left:0;top:0;bottom:0;border-radius:3px}
+.br .v{text-align:right;font-weight:600}
+table.num{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:12px}
+table.num th,table.num td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.num th{color:var(--ink-3);font-weight:600;font-size:.84rem}
+table.num td.r{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+
+ul.src{columns:2;column-gap:32px;padding-left:18px;font-size:.9rem}
+ul.src li{break-inside:avoid;margin-bottom:6px}
+footer{padding:30px 0 46px;color:var(--ink-3);font-size:.88rem}
+@media (max-width:820px){ .two{grid-template-columns:1fr} ul.src{columns:1} }
+@media (max-width:480px){ .wrap{padding:0 16px} }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <h1>Dánsko a Slovensko: jak se měnila správa a financování veřejnoprávních médií</h1>
+    <p class="lead">Obě země zrušily poplatek a přešly na financování ze státního rozpočtu. V Dánsku změna proběhla v letech 2018–2022 s tříletým přechodem a s následnou úpravou jmenování správní rady. Na Slovensku se v letech 2023–2024 vystřídaly tři modely financování a změnila se instituce i způsob jmenování vedení.</p>
+    <p class="meta">Stav k 24. 10. 2026. Popis vychází z dokumentů parlamentů, vlád, kontrolních úřadů a mezinárodních indexů; zdroje jsou na konci stránky. Hodnoty, které zdroje neuvádějí, nejsou odhadovány.</p>
+  </div>
+</header>
+
+<section id="osa">
+  <div class="wrap">
+    <h2>Časová osa</h2>
+    <p class="note">Pruhy ukazují, který model platil v daném období. Čísla v kroužcích odkazují na milníky pod osou. Šrafovaný pruh označuje stav podle návrhu zákona, jehož účinnost jsem neověřil.</p>
+    <div class="tl-scroll">
+      <div class="tl" id="tl"></div>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--fee)"></i>poplatek</span>
+      <span><i style="background:var(--mix)"></i>přechod: poplatek + rozpočet</span>
+      <span><i style="background:var(--bud)"></i>státní rozpočet</span>
+      <span><i style="background:var(--bud2)"></i>státní rozpočet, nižší zákonný podíl</span>
+      <span><i style="background:var(--gov-a)"></i><i style="background:var(--gov-b);margin-left:-4px"></i><i style="background:var(--gov-c);margin-left:-4px"></i>modely jmenování vedení</span>
+    </div>
+  </div>
+</section>
+
+<section class="tint" id="milniky">
+  <div class="wrap">
+    <h2>Milníky</h2>
+    <div class="two">
+      <div><h3>Dánsko (DR)</h3><ol class="mil" id="mil-dk"></ol></div>
+      <div><h3>Slovensko (RTVS → STVR)</h3><ol class="mil" id="mil-sk"></ol></div>
+    </div>
+  </div>
+</section>
+
+<section id="srovnani">
+  <div class="wrap">
+    <h2>Výchozí a výsledný stav</h2>
+    <p class="note">Dimenze: zdroj a výše financování, stabilita a předvídatelnost, kontrolní mechanismy a jmenování, vazba na politickou moc (měřená mezinárodními indexy), dále rozsah služby a způsob přijetí změn.</p>
+
+    <h3 style="margin-top:22px">Dánsko: stav do roku 2018 → stav 2026</h3>
+    <div class="cmp-wrap"><table class="cmp">
+      <thead><tr><th>Dimenze</th><th>Výchozí stav (do 2018)</th><th>Výsledný stav (2026)</th><th>Popis změny</th></tr></thead>
+      <tbody>
+        <tr><th>Zdroj financování</th><td>Mediální licence placená domácnostmi; v národních účtech se vede jako daň.</td><td>Prostředky ze státního rozpočtu (finanční zákon) od 2022; výpadek licence pokryt snížením osobní odpočitatelné položky.</td><td class="chg">Přechod 2019–2021 kombinoval licenci a rozpočet; licence plně zrušena od 2022.</td></tr>
+        <tr><th>Výše financování DR</th><td>3 897,0 mil. DKK (2018, ceny 2022).</td><td>3 462,7 mil. DKK ročně v rámci 2022–2025 (ceny 2022).</td><td class="chg">Pokles o 11,1 % proti 2018 (vlastní výpočet z údajů ministerstva). Dohoda z 2018 plánovala snížení o 20 % do roku 2023.</td></tr>
+        <tr><th>Stabilita a předvídatelnost</th><td>Rámec určovaly mediální dohody vlády s parlamentními stranami, uzavírané zpravidla na čtyři roky.</td><td>Výše stanovena ve víceletých mediálních dohodách (2019–2023, 2022–2025, 2023–2026), formálně schvalována v ročním rozpočtu.</td><td class="chg">Víceletý rámec zůstal zachován; mezi dohodami se jeho úroveň změnila po změně vlády v roce 2019.</td></tr>
+        <tr><th>Jmenování vedení (rada DR)</th><td>11 členů: ministr kultury 3 (vč. předsedy), zaměstnanci 2, šest největších stran přímo 6; mandát 4 roky; politici vyloučeni.</td><td>Od 2019: strany navrhují po dvou kandidátech, ministr a strany společně vybírají 6. Návrh L 161 (2025): strany volí jmenovací orgán, ten jmenuje 6; kompetenční požadavky; mandát 3 roky, nejvýše 12 let.</td><td class="chg">Přímé jmenování stranami nahrazeno výběrem z kandidátů, nově společným jmenovacím orgánem. Počet členů a podíl ministra (3 z 11) se nemění.</td></tr>
+        <tr><th>Další kontrolní nástroje</th><td>Smlouva o veřejné službě mezi DR a ministrem kultury.</td><td>Smlouva o veřejné službě 2019–2023 s rozpočtem sníženým o 20 % a novými podmínkami (např. omezení délky článků na dr.dk).</td><td class="chg">Mediální dohoda určuje rámec, smlouva jej konkretizuje.</td></tr>
+        <tr><th>Rozsah služby</th><td>Široké portfolio televize, rozhlasu a internetu.</td><td>Dohoda 2018: soustředit se na základní veřejnou službu a nekonkurovat soukromým tam, kde to neslouží jasnému účelu veřejné služby. 2025: 3 televizní a 7 rozhlasových kanálů.</td><td class="chg">V roce 2018 DR zrušilo 382 míst; v září 2018 představilo úsporný a rozvojový plán.</td></tr>
+        <tr><th>Způsob přijetí</th><td>–</td><td>2018: vláda s Dánskou lidovou stranou. 2022: sociální demokraté a levicové strany. 2023: široká dohoda včetně V, M a DF. L 161: výbor doporučil přijetí většinou osmi stran, DF a LA proti.</td><td class="chg">Každou z dohod podpořila jiná skupina stran.</td></tr>
+        <tr><th>Vazba na politickou moc (indexy)</th><td>Starší srovnatelná data nejsou v této analýze.</td><td>MPM 2026: 30 % riziko (správa a financování, vlastní agregace); RSF 2026 politický indikátor 91,79; RSF 2025 nezávislost VS: 6. místo z 27.</td><td class="chg">–</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 style="margin-top:34px">Slovensko: stav do června 2023 → stav 2026</h3>
+    <div class="cmp-wrap"><table class="cmp">
+      <thead><tr><th>Dimenze</th><th>Výchozí stav (do 6/2023)</th><th>Výsledný stav (2026)</th><th>Popis změny</th></tr></thead>
+      <tbody>
+        <tr><th>Zdroj financování</th><td>Úhrada za služby veřejnosti (koncesionářský poplatek) domácností a zaměstnavatelů + roční smlouva se státem na programy ve veřejném zájmu + reklama.</td><td>Nárokovatelný příspěvek ze státního rozpočtu nejméně 0,12 % HDP + reklama; smlouva se státem zrušena.</td><td class="chg">Poplatek zrušen od 1. 7. 2023; od 7/2023 do 12/2023 platil podíl 0,17 % HDP.</td></tr>
+        <tr><th>Výše financování</th><td>Očekávání pro 2023: poplatky 83 mil. €, smlouva se státem 31 mil. €. Celkový rozpočet RTVS 2022: 141,5 mil. €.</td><td>0,12 % HDP, v roce 2024 zhruba 131 mil. €.</td><td class="chg">Proti modelu 0,17 % HDP (180 mil. €) pokles zhruba o 55 mil. €, podle CEDMO o 29,4 %.</td></tr>
+        <tr><th>Stabilita a předvídatelnost</th><td>Výše poplatku daná zákonem; smlouva se státem se uzavírala každý rok.</td><td>Automatický podíl na HDP daný zákonem, který lze změnit prostou většinou.</td><td class="chg">Podíl byl změněn půl roku po zavedení (12/2023). NKÚ ve zprávě uvedl, že snížení po půl roce ukazuje riziko pro stabilitu a předvídatelnost příjmů.</td></tr>
+        <tr><th>Jmenování vedení</th><td>Radu RTVS (9 členů) volí Národní rada absolutní většinou na návrh výboru; generálního ředitele volí Národní rada po veřejném slyšení, mandát 5 let.</td><td>Rada STVR (9 členů): 4 jmenuje ministr kultury po výběrovém řízení, 5 volí Národní rada; generálního ředitele volí rada po veřejném slyšení, mandát 6 let.</td><td class="chg">Mandáty ředitele a rady zanikly dnem účinnosti zákona (1. 7. 2024). Volba ředitele přešla z parlamentu na radu, část rady nově jmenuje ministr.</td></tr>
+        <tr><th>Další kontrolní nástroje</th><td>Etická komise podřízená generálnímu řediteli; kontroly NKÚ.</td><td>Etickou komisi volí předseda rady na návrh organizací (menšiny, osoby se zdravotním postižením, mládež, církve, samosprávy); kontroly NKÚ.</td><td class="chg">NKÚ kontroloval roky 2022–2024 a adresoval doporučení STVR.</td></tr>
+        <tr><th>Rozsah služby</th><td>RTVS: 4 televizní a 9 rozhlasových stanic, 3 regionální rozhlasové kanály.</td><td>Zákon o STVR stanoví minimální rozsah regionálního vysílání; podíl televizní reklamy podle TASR z 0,5 na 5 % vysílacího času.</td><td class="chg">Instituce přejmenována z RTVS na STVR; ministerstvo zdůvodnilo změnu názvu tím, že původní název podle něj označoval národ jako region.</td></tr>
+        <tr><th>Způsob přijetí</th><td>–</td><td>6/2023 podíl 0,17 % HDP: 128 poslanců (koalice i tehdejší opozice). 12/2023 snížení na 0,12 %: 78 z 79 poslanců nové koalice. 6/2024 zákon o STVR: 78 ze 78 přítomných, opozice nehlasovala.</td><td class="chg">Změny z let 2023–2024 přijímaly různé parlamentní většiny v rozmezí jednoho roku.</td></tr>
+        <tr><th>Vazba na politickou moc (indexy)</th><td>RSF 2025 nezávislost VS (data 2024): 16. místo z 27.</td><td>MPM 2026: 100 % riziko (správa a financování, vlastní agregace); RSF 2026 politický indikátor 53,50.</td><td class="chg">Indexy pokrývají různá období; RSF 2025 vychází z dat za rok 2024, MPM 2026 za rok 2025.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section class="tint" id="cisla">
+  <div class="wrap">
+    <h2>Financování v číslech</h2>
+    <div class="two">
+      <div>
+        <h3>DR: veřejné financování 2017–2025</h3>
+        <p class="note">Mil. DKK v cenách 2022 (součet podílu licence a rozpočtu). Zdroj: odpověď ministra kultury Folketingu, září 2021.</p>
+        <div class="bars" id="bars-dk"></div>
+      </div>
+      <div>
+        <h3>RTVS/STVR: dostupné údaje</h3>
+        <p class="note">Údaje mají různé vymezení (plán, rozpočet, celkové příjmy), proto nejsou v grafu.</p>
+        <table class="num">
+          <thead><tr><th>Údaj</th><th>Hodnota</th><th>Zdroj</th></tr></thead>
+          <tbody>
+            <tr><td>Celkový rozpočet RTVS 2022</td><td class="r">141,5 mil. €</td><td>State Media Monitor</td></tr>
+            <tr><td>Očekávané poplatky 2023 + smlouva se státem</td><td class="r">83 + 31 mil. €</td><td>ministryně Milanová (Startitup)</td></tr>
+            <tr><td>Celkové příjmy RTVS 2023</td><td class="r">199,0 mil. €</td><td>NKÚ</td></tr>
+            <tr><td>Model 0,17 % HDP (minimum podle zákona)</td><td class="r">180 mil. €</td><td>TASR</td></tr>
+            <tr><td>STVR 2024: 0,12 % HDP</td><td class="r">≈ 131 mil. €</td><td>State Media Monitor</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="zdroje">
+  <div class="wrap">
+    <h2>Zdroje</h2>
+    <ul class="src">
+      <li><a href="https://regeringen.dk/media/odebcein/ny-aftale-om-fokusering-af-dr-og-afskaffelse-af-medielicensen.pdf">Vláda DK: dohoda o zrušení licence, březen 2018</a></li>
+      <li><a href="https://regeringen.dk/media/12fftchg/29062018endelig-medieaftale-2019-2023.pdf">Mediální dohoda 2019–2023 (29. 6. 2018)</a></li>
+      <li><a href="https://ft.dk/samling/20201/almdel/kuu/spm/378/svar/1809561/2447424.pdf">Folketing: mediální rámec DR 2017–2025</a></li>
+      <li><a href="https://www.ft.dk/samling/20181/almdel/KUU/bilag/136/2054673/index.htm">Výroční zpráva DR 2018</a></li>
+      <li><a href="https://www.ft.dk/samling/20181/almdel/sau/spm/289/svar/1564835/2028703.pdf">Folketing: financování přes osobní odpočet</a></li>
+      <li><a href="https://ft.dk/samling/20241/almdel/kuu/bilag/56/2948308.pdf">Návrh zákona o jmenování rady DR (L 161)</a></li>
+      <li><a href="https://www.ft.dk/samling/20241/lovforslag/L161/bilag/6/3020132.pdf">Zpráva kulturního výboru k L 161, 7. 5. 2025</a></li>
+      <li><a href="https://ft.dk/ripdf/samling/20221/lovforslag/l49/20221_l49_fremsaettelsestale.pdf">L 49: mediální dohoda 2022–2025</a></li>
+      <li><a href="https://www.thebritishacademy.ac.uk/documents/6012/Public_Service_Media_Policy_Briefs.pdf">British Academy: kapitola o Dánsku (2025)</a></li>
+      <li><a href="https://nku.gov.sk/documents/d/nku/plnenie-prijatych-opatreni-v-rtvs-pdf">NKÚ SR: Plnenie prijatých opatrení v RTVS (2024)</a></li>
+      <li><a href="https://www.teraz.sk/slovensko/rtvs-bude-dostavat-statny-prispevok/722743-clanok.html">TASR: příspěvek 0,17 % HDP (2023)</a></li>
+      <li><a href="https://www.startitup.sk/?p=745536">Startitup: vládní návrh 0,15 % HDP (2023)</a></li>
+      <li><a href="https://zssambra.sk/blog/kedy-sa-zrusia-koncesionarske-poplatky-pre-dochodcov/">Zrušení poplatků 17. 2. 2023</a></li>
+      <li><a href="https://memo98.sk/article/pdf/905">MEMO 98: chronologie RTVS 2022–2024</a></li>
+      <li><a href="https://www.teraz.sk/slovensko/vlada-schvalila-zakon-o-slovenskej-te/790357-clanok.html">TASR: vláda schválila zákon o STVR (24. 4. 2024)</a></li>
+      <li><a href="https://www.teraz.sk/slovensko/brief-nrsr-prijala-zakon-o-slovenskej/803499-clanok.html">TASR: parlament přijal zákon o STVR (20. 6. 2024)</a></li>
+      <li><a href="https://statemediamonitor.com/2025/10/radio-and-television-slovakia-rtvs/">State Media Monitor: STVR</a></li>
+      <li><a href="https://statemediamonitor.com/?p=1262">State Media Monitor: RTVS (dřívější profil)</a></li>
+      <li><a href="https://cedmohub.eu/cs/koncesionarske-poplatky-v-evropskych-zemich/">CEDMO: pokles o 29,4 %</a></li>
+      <li><a href="https://cmpf.eui.eu/wp-content/uploads/2026/06/political-independence-2026.csv">MPM 2026: dataset</a></li>
+      <li><a href="https://rsf.org/en/index">RSF World Press Freedom Index 2026</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer><div class="wrap">Připraveno pro STEM, 24. 10. 2026.</div></footer>
+
+<script>
+(function(){
+  var Y0 = 2017, Y1 = 2028; // osa od 1. 1. 2017 do 1. 1. 2028
+  function pos(y, m){ return ((y + (m - 1) / 12) - Y0) / (Y1 - Y0) * 100; }
+
+  var DATA = [
+    { id:"dk", name:"Dánsko (DR)", lanes:[
+      { label:"Financování", phases:[
+        {from:[2017,1], to:[2019,1], text:"Mediální licence", c:"--fee"},
+        {from:[2019,1], to:[2022,1], text:"Přechod: licence + rozpočet; škrty", c:"--mix", light:true},
+        {from:[2022,1], to:[2028,1], text:"Státní rozpočet ve víceletých dohodách", c:"--bud"}
+      ]},
+      { label:"Jmenování rady", phases:[
+        {from:[2017,1], to:[2019,1], text:"6 členů jmenují strany přímo", c:"--gov-a"},
+        {from:[2019,1], to:[2027,1], text:"Strany navrhují kandidáty, ministr a strany vybírají", c:"--gov-b"},
+        {from:[2027,1], to:[2028,1], text:"Jmenovací orgán", c:"--gov-c", light:true, dash:true}
+      ]}
+    ], ms:[
+      {d:[2018,3], key:true, t:"16. 3. 2018", s:"Vláda a Dánská lidová strana se dohodly na zrušení mediální licence a snížení financování DR o 20 % v letech 2019–2023, rozloženém rovnoměrně."},
+      {d:[2018,6], t:"29. 6. 2018", s:"Mediální dohoda 2019–2023: DR se má soustředit na základní veřejnou službu; financování se v letech 2019–2022 postupně převádí z licence na daně."},
+      {d:[2018,9], t:"září 2018", s:"DR představilo úsporný a rozvojový plán; v roce 2018 zrušilo 382 míst."},
+      {d:[2018,12], t:"18. 12. 2018", s:"Zákon č. 1549: šest největších stran už nejmenuje členy rady přímo, ale navrhuje po dvou kandidátech."},
+      {d:[2019,1], t:"1. 1. 2019", s:"Začátek přechodného období: DR financováno kombinací licence a prostředků z finančního zákona."},
+      {d:[2019,6], t:"červen 2019", s:"Parlamentní volby, novou vládu sestavují sociální demokraté."},
+      {d:[2022,1], key:true, t:"1. 1. 2022", s:"Mediální licence plně zrušena; DR financováno ze státního rozpočtu. Rámec DR 3 462,8 mil. DKK (ceny 2022) proti 3 897,0 mil. v roce 2018."},
+      {d:[2022,5], t:"21. 5. 2022", s:"Mediální dohoda 2022–2025 (sociální demokraté a levicové strany); rámec DR na úrovni 2022 po celé období; zadání připravit nový model jmenování rady."},
+      {d:[2023,6], t:"14. 6. 2023", s:"Mediální dohoda 2023–2026 s širší koalicí včetně V, M a DF."},
+      {d:[2024,4], t:"12. 4. 2024", s:"Politická dohoda o novém modelu jmenování rady podle doporučení výboru z ledna 2024."},
+      {d:[2025,2], t:"27. 2. 2025", s:"Ministr kultury předložil návrh zákona L 161 (jmenovací orgán, kompetenční požadavky, mandát 3 roky)."},
+      {d:[2025,5], key:true, t:"7. 5. 2025", s:"Kulturní výbor doporučil L 161 přijmout (S, V, DD, SF, M, KF, EL, RV; proti DF a LA). Návrh zákona počítal s účinností od 1. 1. 2027; konečné přijetí a účinnost jsem neověřil."}
+    ]},
+    { id:"sk", name:"Slovensko (RTVS → STVR)", lanes:[
+      { label:"Financování", phases:[
+        {from:[2017,1], to:[2023,7], text:"Poplatek + smlouva se státem + reklama", c:"--fee"},
+        {from:[2023,7], to:[2024,1], text:"0,17 % HDP", c:"--bud"},
+        {from:[2024,1], to:[2028,1], text:"Státní rozpočet, 0,12 % HDP", c:"--bud2", light:true}
+      ]},
+      { label:"Jmenování vedení", phases:[
+        {from:[2017,1], to:[2024,7], text:"RTVS: radu i ředitele volí parlament", c:"--gov-a"},
+        {from:[2024,7], to:[2028,1], text:"STVR: 4 členy rady jmenuje ministr, 5 parlament; ředitele volí rada", c:"--gov-b"}
+      ]}
+    ], ms:[
+      {d:[2022,12], t:"prosinec 2022", s:"Při schvalování státního rozpočtu na 2023 prosadila SaS zrušení poplatků; zrušení je součástí novely zákona o dani ze speciálních staveb."},
+      {d:[2023,2], key:true, t:"17. 2. 2023", s:"Národní rada po přehlasování veta prezidentky zrušila poplatky s účinností od 1. 7. 2023."},
+      {d:[2023,4], t:"jaro 2023", s:"Ministerstvo kultury navrhlo podíl nejméně 0,17 % (optimum 0,19 %) HDP; vláda schválila kompromis 0,15 % HDP."},
+      {d:[2023,6], t:"červen 2023", s:"Parlament (128 poslanců) schválil nárokovatelný příspěvek 0,17 % HDP a zrušení smlouvy se státem."},
+      {d:[2023,7], key:true, t:"1. 7. 2023", s:"Poplatky zanikají, RTVS financováno ze státního rozpočtu; plný režim od roku 2024."},
+      {d:[2023,9], t:"30. 9. 2023", s:"Parlamentní volby, novou vládu sestavuje Robert Fico."},
+      {d:[2023,12], key:true, t:"prosinec 2023", s:"V rámci konsolidačního balíčku snížen podíl na 0,12 % HDP od 2024 (hlasy 78 ze 79 poslanců nové koalice)."},
+      {d:[2024,4], t:"24. 4. 2024", s:"Vláda schválila návrh zákona o Slovenské televizi a rozhlasu (STVR)."},
+      {d:[2024,6], t:"20. 6. 2024", s:"Národní rada zákon přijala hlasy 78 ze 78 přítomných; opozice nehlasovala."},
+      {d:[2024,7], key:true, t:"1. 7. 2024", s:"Vzniká STVR; mandát generálního ředitele a rady RTVS zaniká. Rozpočet 2024 zhruba 131 mil. €."}
+    ]}
+  ];
+
+  var tl = document.getElementById("tl");
+  var axis = '<div class="axis"><div></div><div class="years">';
+  for (var y = Y0; y <= Y1 - 1; y++) axis += '<span style="left:' + pos(y, 7) + '%">' + y + '</span>';
+  axis += '</div></div>';
+  var html = axis;
+  DATA.forEach(function(c){
+    html += '<div class="country"><h3>' + c.name + '</h3>';
+    c.lanes.forEach(function(l){
+      html += '<div class="lane"><div class="ln">' + l.label + '</div><div class="track">';
+      l.phases.forEach(function(p){
+        var a = pos(p.from[0], p.from[1]), b = pos(p.to[0], p.to[1]);
+        html += '<div class="ph' + (p.light ? ' light' : '') + (p.dash ? ' dash' : '') + '" style="left:' + a + '%;width:' + (b - a) + '%;background-color:var(' + p.c + ')" title="' + p.text + '">' + p.text + '</div>';
+      });
+      html += '</div></div>';
+    });
+    html += '<div class="lane"><div class="ln">Milníky</div><div class="ms-track">';
+    c.ms.forEach(function(m, i){
+      html += '<button type="button" class="ms' + (m.key ? ' key' : '') + '" style="left:' + pos(m.d[0], m.d[1] + 0.5) + '%" data-target="' + c.id + '-' + (i + 1) + '" aria-label="' + m.t + '" title="' + m.t + '">' + (i + 1) + '</button>';
+    });
+    html += '</div></div></div>';
+
+    var list = document.getElementById("mil-" + c.id);
+    list.innerHTML = c.ms.map(function(m, i){
+      return '<li id="' + c.id + '-' + (i + 1) + '"><div class="n' + (m.key ? ' key' : '') + '">' + (i + 1) + '</div><div><b>' + m.t + '</b><span>' + m.s + '</span></div></li>';
+    }).join("");
+  });
+  tl.innerHTML = html;
+
+  // Kroužky na ose rozmístit, aby se nepřekrývaly (min. 26 px)
+  document.querySelectorAll(".ms-track").forEach(function(tr){
+    var w = tr.getBoundingClientRect().width, last = -999;
+    tr.querySelectorAll(".ms").forEach(function(b){
+      var x = parseFloat(b.style.left) / 100 * w;
+      if (x - last < 26) x = last + 26;
+      b.style.left = x + "px"; last = x;
+    });
+  });
+
+  document.querySelectorAll(".ms").forEach(function(b){
+    b.addEventListener("click", function(){
+      var li = document.getElementById(b.dataset.target);
+      document.querySelectorAll("ol.mil li").forEach(function(x){ x.classList.remove("hl"); });
+      li.classList.add("hl");
+      li.scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"center"});
+    });
+  });
+
+  var DK = [[2017,3898.6],[2018,3897.0],[2019,3715.2],[2020,3593.2],[2021,3477.9],[2022,3462.8],[2023,3462.7],[2024,3462.7],[2025,3462.7]];
+  var max = 4000;
+  document.getElementById("bars-dk").innerHTML = DK.map(function(d){
+    var c = d[0] <= 2018 ? "--fee" : (d[0] <= 2021 ? "--mix" : "--bud");
+    return '<div class="br"><div>' + d[0] + '</div><div class="t"><div class="f" style="width:' + (d[1]/max*100) + '%;background:var(' + c + ')"></div></div><div class="v">' + d[1].toFixed(1).replace(".", ",").replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0") + '</div></div>';
+  }).join("");
+})();
+</script>
+</body>
+</html>
